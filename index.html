@@ -204,6 +204,16 @@
   @media (prefers-reduced-motion: reduce) { .hero h1 .w { animation: none; opacity: 1; transform: none; filter: none; } .stage .screen, .aura { transform: none !important; } }
   @media (max-width: 600px) { .tab { min-width: 0; flex: 1 1 40%; font-size: 13.5px; } .reel { margin-top: 80px; } .demo .card img { width: 52px; height: 52px; } .demo .card { gap: 12px; padding: 10px 16px 10px 10px; } }
 
+  /* "only in Avenor": four short points with line icons */
+  .only { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 22px; }
+  .only .o { padding: 24px 22px 26px; border-radius: 22px; background: var(--card); border: 1px solid var(--line); text-align: left; }
+  .only svg { width: 30px; height: 30px; stroke: url(#og); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; margin-bottom: 16px; }
+  .only h3 { font: 800 17px/1.3 Manrope, sans-serif; letter-spacing: 0; }
+  .only p { color: var(--dim); font-size: 14.5px; margin: 8px 0 0; line-height: 1.5; }
+  .only-t { text-align: center; margin-top: 90px; }
+  @media (max-width: 960px) { .only { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 600px) { .only { grid-template-columns: 1fr; } }
+
   /* reveal on scroll */
   .rv { opacity: 0; transform: translateY(26px); transition: opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1); }
   .rv.in { opacity: 1; transform: none; }
@@ -246,7 +256,7 @@
 <header class="hero" id="top">
   <div class="wrap">
     <h1 class="rv">Музыка,<br><span class="grad">которая светится.</span></h1>
-    <p class="lead rv">Avenor превращает экран в сцену: клип на весь экран, огненный свет по краям в цветах обложки и текст песни, который загорается слово за словом. Слушайте YouTube Music, Spotify, Яндекс Музыку и SoundCloud — в одном красивом плеере.</p>
+    <p class="lead rv">Avenor — плеер, в котором у каждой песни свой клип. Оригинальное видео на весь экран, свет по краям в его цветах и текст, который загорается слово за словом. YouTube Music, Яндекс Музыка, SoundCloud и Spotify — с вашими лайками, «Моей волной» и даже вместе с другом.</p>
     <div class="ctas rv">
       <a class="btn btn-white" href="https://github.com/damireng/avenor/releases/latest/download/Avenor-Setup.exe">Скачать для Windows <small>7 дней бесплатно</small></a>
     </div>
@@ -280,14 +290,22 @@
       <button class="tab"><span>Живые обои</span><i><b></b></i></button>
     </div>
     <p class="cap"></p>
+    <p class="eyebrow rv only-t">Только в Avenor</p>
+    <svg width="0" height="0" style="position:absolute"><defs><linearGradient id="og" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff4f9a"/><stop offset="1" stop-color="#ffb347"/></linearGradient></defs></svg>
+    <div class="only">
+      <div class="o rv spot"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="2.5"/><path d="M10 9l4.5 2-4.5 2z"/><path d="M8 20h8"/></svg><h3>Свой плеер с клипами</h3><p>Музыка играет прямо в Avenor: поиск, очередь, лайки — и оригинальный клип песни на весь экран.</p></div>
+      <div class="o rv spot"><svg viewBox="0 0 24 24"><path d="M3 12c2.5-5 4.5-5 6 0s3.5 5 6 0 4-5 6 0"/></svg><h3>«Моя волна» везде</h3><p>Бесконечная подборка под ваш вкус — в Яндекс Музыке, YouTube Music, SoundCloud и Spotify.</p></div>
+      <div class="o rv spot"><svg viewBox="0 0 24 24"><circle cx="8.5" cy="9" r="3"/><circle cx="16.5" cy="9" r="3"/><path d="M3 19c.8-3 3-4.5 5.5-4.5S13.2 16 14 19M13 15.3c1-.5 2.2-.8 3.5-.8 2.5 0 4.7 1.5 5.5 4.5"/></svg><h3>Слушать вместе</h3><p>Комната с другом: одна песня у обоих, синхронно. Хозяин решает, кто может переключать.</p></div>
+      <div class="o rv spot"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M7 21h10M12 17v4M8 4v13"/></svg><h3>Клип на рабочем столе</h3><p>Живые обои под всеми окнами, а мини-плеер выезжает сверху экрана, когда он нужен.</p></div>
+    </div>
   </div>
 </section>
 
 <section id="light">
   <div class="wrap center">
     <p class="eyebrow rv">Попробуйте сами</p>
-    <h2 class="rv">Свет, который<br><span class="grad">играет вместе с песней.</span></h2>
-    <p class="rv">По краям горит живая кромка в цветах обложки. На ударных вспыхивает и сыплет искрами, на тихих местах успокаивается, на паузе гаснет. Нажмите на цвет — так это выглядит в Avenor.</p>
+    <h2 class="rv">Цвет берётся<br><span class="grad">прямо из кадра.</span></h2>
+    <p class="rv">Свет по краям экрана подхватывает цвета клипа — сцена сменилась, сменился и он. Нет клипа — берёт цвета обложки. Любой из 24 цветов, своя толщина и яркость. Нажмите на цвет и посмотрите сами.</p>
     <div class="demo rv">
       <div class="art" style="background-image:url(media/demo-cover.jpg)"></div>
       <canvas></canvas>
@@ -437,7 +455,7 @@
 
 <div class="final">
   <div class="wrap">
-    <h2 class="rv">Выключите свет.<br><span class="grad">Включите песню.</span></h2>
+    <h2 class="rv">Ваша музыка.<br><span class="grad">Ваша сцена.</span></h2>
     <div class="rv" style="margin-top:34px"><a class="btn btn-white" href="https://github.com/damireng/avenor/releases/latest/download/Avenor-Setup.exe">Скачать Avenor <small>7 дней бесплатно</small></a></div>
   </div>
 </div>
